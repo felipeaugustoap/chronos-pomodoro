@@ -1,0 +1,19 @@
+.logo{
+    color: var(--primary);
+    width: 5rem;
+    height: 5rem;
+}
+
+.textLogo{
+    font-size: 4rem;
+    color: var(--primary);
+}
+
+.logoContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* gap: 2.4rem; */
+    margin-top: 5rem;
+}
