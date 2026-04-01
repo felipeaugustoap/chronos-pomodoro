@@ -3,25 +3,27 @@
     align-items: center;
     justify-content: center;
     gap: 2.4rem;
-    background-color: red;
+    padding-top: 3.2rem;
 }
 
-a{
-    color: var(--primary);
-    width: 5rem;
-    height: 5rem;
-}
-
-.textLogo{
-    font-size: 4rem;
-    color: var(--primary);
-}
-
-.logoContainer{
+.logoLink{
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* gap: 2.4rem; */
-    margin-top: 5rem;
+    flex-direction: column;
+    gap: 0.3rem;
+    font-size: 4.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--primary);
+}
+
+.logoLink:hover{
+    filter: brightness(50%);
+    transition: all 0.2s ease-in-out;
+}
+
+.logoLink svg{
+    width: 6.4rem;
+    height: 6.4rem;
 }
