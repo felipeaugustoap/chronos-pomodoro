@@ -1,17 +1,22 @@
 import styles from './styles.module.css'
 
-type DefaultInputProps = {
-    id: string;
-    labelText: string;
- } & React.ComponentProps<"input">
+type DefaultButtonProps = {
+    icon: React.ReactNode;
+    color?: 'green' | 'red';
+} & React.ComponentProps<"button">
 
-export function DefaultInput({ type, id, labelText, ...rest }: DefaultInputProps) {
+export function DefaultButton({
+    icon,
+    color = 'green',
+    ...props
+}: DefaultButtonProps) {
     return (
         <>
-            {labelText && <label htmlFor={ id }>{ labelText }</label>}
-            <input className={styles.input} id={ id } type={type} {...rest} /> 
+            <button className={`${styles.button} ${styles[color]}`} {...props}> 
+                {icon}
+            </button>
         </>
     )
 }
  
-{ /* ...rest = serve para passar props adicionais para o elemento <input> que não são definidas explicitamente  e façam parte do React.ComponentProps<"input"> definido no type do componente */}
+{ /* ...rest = serve para passar props adicionais para o elemento <button> que não são definidas explicitamente  e façam parte do React.ComponentProps<"button"> definido no type do componente */}
