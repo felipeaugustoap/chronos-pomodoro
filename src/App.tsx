@@ -14,12 +14,12 @@ import { PlayCircleIcon } from 'lucide-react'
 import { Footer } from './components/Footer'
 
 
-
 //PascalCase
 
 export function App() {
+    
     return (
-        <>
+        <>  
             <Container>
                 <Logo />
             </Container>
@@ -33,7 +33,7 @@ export function App() {
                 <form className="form" action="">
                     <div className="formRow">
                         <DefaultInput
-                            labelText='teste'
+                            labelText="task"
                             type="text"
                             id='meuInput'
                             placeholder='Digite algo'
