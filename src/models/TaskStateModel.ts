@@ -5,10 +5,10 @@ export type TaskStateModel = {
     secondsRemaining: number;
     formatedSecondsRemainig: string;
     activeTask: TaskModel | null;
-    currentCycel: number;
+    currentCycle: number;
     config: {
         workTime: number;
-        shortBreaktime: number;
+        shortBreakTime: number;
         longBreakTime: number;
     };
 }
