@@ -3,6 +3,7 @@ import { Cycles } from "../Cycles"
 import { DefaultButton } from "../DefaultButton"
 import { DefaultInput } from "../DefaultInput"
 import styles from "./styles.module.css"
+//import type { HomeProps } from "../../pages/Home"
 
 
 
@@ -19,7 +20,7 @@ export function MainForm () {
                     </div>
 
                     <div className={styles.formRow}>
-                        <p>Lorem ipsum dolor sit amet.</p>
+                        <p>O próximo estado é de 25min</p>
                     </div>
 
                     <div className={styles.formRow}>

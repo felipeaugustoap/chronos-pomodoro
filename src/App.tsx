@@ -7,6 +7,7 @@ import { Home } from './pages/Home'
 import { useState } from 'react'
 //import type { TaskModel } from './models/TaskModel'
 import type { TaskStateModel } from './models/TaskStateModel'
+import { TaskContext } from './contexts/TaskContext'
 // import { NotFound } from './pages/NotFound'
 // import { AboutPomodoro } from './pages/AboutPomodoro'
 
@@ -16,7 +17,7 @@ import type { TaskStateModel } from './models/TaskStateModel'
 const initialState: TaskStateModel = {
     tasks: [],
     secondsRemaining: 0,
-    formatedSecondsRemainig: "00:00",
+    formattedSecondsRemaining: "00:00",
     activeTask: null,
     currentCycle: 0,
     config: {
@@ -31,7 +32,11 @@ export function App() {
 
     const [state, setState] = useState(initialState)
     
-    return <Home state={state} setState={setState}/>
+    return (
+        <TaskContext.Provider value={{outraCoisa: 321}}>
+            <Home />
+        </TaskContext.Provider>
+    )
 }
 
 
