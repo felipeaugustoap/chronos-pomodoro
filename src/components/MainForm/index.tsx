@@ -48,7 +48,7 @@ export function MainForm() {
             type: nextCycleType,
         };
 
-        dispatch({type: TaskActionTypes.START_TASK, payload: newTask})
+        dispatch({ type: TaskActionTypes.START_TASK, payload: newTask })
         
     };
 

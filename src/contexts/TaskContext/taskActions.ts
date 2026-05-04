@@ -7,28 +7,34 @@
 
 import type { TaskModel } from "../../models/TaskModel";
 
-// eslint-disable-next-line
-export enum TaskActionTypes {
-  START_TASK = "START_TASK",
-  INTERRUPT_TASK = "INTERRUPT_TASK",
-  RESET_STATE = "RESET_STATE",
-}
+export const TaskActionTypes = {
+  START_TASK: "START_TASK",
+  INTERRUPT_TASK: "INTERRUPT_TASK",
+  RESET_STATE: "RESET_STATE",
+  COUNT_DOWN: "COUNT_DOWN",
+  COMPLETE_TASK: "COMPLETE_TASK",
+} as const;
+
+export type TaskActionTypes =
+  (typeof TaskActionTypes)[keyof typeof TaskActionTypes];
 
 export type TaskActionsWithPayload =
-    {
-      type: TaskActionTypes.START_TASK;
-      payload: TaskModel;
-    }
-  
+  | {
+  type: typeof TaskActionTypes.START_TASK;
+  payload: TaskModel;
+  }
+  | {
+    type: typeof TaskActionTypes.START_TASK;
+    payload: TaskModel;
+  };
 
 export type TaskActionsWithoutPayload =
-  {
-    type: TaskActionTypes.RESET_STATE;
-  }
-  |
-  {
-    type: TaskActionTypes.INTERRUPT_TASK;
-  };
+  | {
+      type: typeof TaskActionTypes.RESET_STATE;
+    }
+  | {
+      type: typeof TaskActionTypes.INTERRUPT_TASK;
+    };
 
 export type TaskActionModel =
   | TaskActionsWithPayload
